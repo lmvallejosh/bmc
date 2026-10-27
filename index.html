@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMC Consultoría Integral</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1B2A4A',
+              slate: '#3A506B',
+              green: '#2E7D32',
+              lightGreen: '#E8F5E9',
+              bgLight: '#F8FAFC',
+              accent: '#0284C7',
+              accentHover: '#0369A1',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Smooth Transitions & Fine Styles */
+    .service-tab-btn.active {
+      background-color: #1B2A4A;
+      color: #ffffff;
+      box-shadow: 0 10px 15px -3px rgba(27, 42, 74, 0.2);
+    }
+    .service-tab-btn.active i {
+      color: #38BDF8;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="font-sans bg-brand-bgLight text-slate-800 antialiased selection:bg-brand-accent selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- 1. FIXED NAVIGATION HEADER                 -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#inicio" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 bg-brand-navy rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-shield-halved text-xl text-sky-400"></i>
+        </div>
+        <div>
+          <span class="font-heading font-black text-xl text-brand-navy tracking-tight block leading-none">BMC</span>
+          <span class="text-xs font-semibold text-slate-500 tracking-widest uppercase">Consultoría Integral</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+        <a href="#inicio" class="hover:text-brand-navy transition-colors">Inicio</a>
+        <a href="#nosotros" class="hover:text-brand-navy transition-colors">Nosotros</a>
+        <a href="#servicios" class="hover:text-brand-navy transition-colors">Servicios</a>
+        <a href="#diferenciadores" class="hover:text-brand-navy transition-colors">¿Por qué elegirnos?</a>
+        <a href="#clientes" class="hover:text-brand-navy transition-colors">Clientes</a>
+        <a href="#contacto" class="hover:text-brand-navy transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contacto" class="bg-brand-navy hover:bg-brand-slate text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+          <i class="fa-regular fa-calendar-check text-sky-400"></i>
+          <span>Agendar Reunión</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" aria-label="Abrir Menú" class="md:hidden text-slate-700 hover:text-brand-navy p-2 focus:outline-none">
+        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="hidden md:hidden bg-white border-b border-slate-200 px-6 pt-4 pb-6 shadow-xl flex flex-col gap-4">
+      <a href="#inicio" class="mobile-nav-link text-slate-700 font-medium py-2 border-b border-slate-100">Inicio</a>
+      <a href="#nosotros" class="mobile-nav-link text-slate-700 font-medium py-2 border-b border-slate-100">Nosotros</a>
+      <a href="#servicios" class="mobile-nav-link text-slate-700 font-medium py-2 border-b border-slate-100">Servicios</a>
+      <a href="#diferenciadores" class="mobile-nav-link text-slate-700 font-medium py-2 border-b border-slate-100">¿Por qué elegirnos</a>
+      <a href="#clientes" class="mobile-nav-link text-slate-700 font-medium py-2 border-b border-slate-100">Clientes</a>
+      <a href="#contacto" class="mobile-nav-link text-slate-700 font-medium py-2 border-b border-slate-100">Contacto</a>
+      
+      <a href="#contacto" class="mobile-nav-link mt-2 w-full text-center bg-brand-navy text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2">
+        <i class="fa-regular fa-calendar-check text-sky-400"></i>
+        <span>Agendar Reunión</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION                            -->
+    <!-- ========================================== -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-brand-navy to-slate-900 text-white py-20 lg:py-28">
+      <!-- Background Graphic Accents -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-sky-500 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-brand-green rounded-full blur-3xl"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 text-sky-300 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+            <span class="w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+            Consultoría Especializada en Perú
+          </div>
+
+          <h1 class="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight text-white">
+            Conoce nuestros servicios y descubre el <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">valor de tu negocio</span> con nosotros.
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Ayudamos a pequeñas y medianas empresas a cumplir la normativa de SST, optimizar sus procesos y crecer con operaciones más seguras, eficientes y digitales.
+          </p>
+
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#servicios" class="w-full sm:w-auto bg-brand-accent hover:bg-brand-accentHover text-white px-8 py-3.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-sky-500/25 transition-all text-center flex items-center justify-center gap-2">
+              <span>Explorar Servicios</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+
+            <a href="https://wa.me/51940253588?text=Hola%20BMC%20Consultor%C3%ADa,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-emerald-600/25 transition-all text-center flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Hablar con un Asesor</span>
+            </a>
+          </div>
+
+          <!-- Feature Highlights Badges -->
+          <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-medium text-slate-300 border-t border-slate-800">
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i>
+              <span>Cumplimiento Legal</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i>
+              <span>Procesos Eficientes</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i>
+              <span>Cero Multas</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i>
+              <span>Soluciones Digitales</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Card Graphic -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none bg-slate-800/80 border border-slate-700/60 rounded-2xl p-6 shadow-2xl backdrop-blur-xl">
+            <div class="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-6">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-sm text-white">Impacto Operativo</h3>
+                  <p class="text-xs text-slate-400">En empresas asesoradas</p>
+                </div>
+              </div>
+              <span class="text-xs font-bold bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded-full border border-emerald-500/30">+100% Regla</span>
+            </div>
+
+            <!-- Stats List -->
+            <div class="space-y-4">
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-shield-cat text-emerald-400 text-lg"></i>
+                  <span class="text-xs sm:text-sm text-slate-200 font-medium">Inspecciones SUNAFIL / OEFA</span>
+                </div>
+                <span class="text-xs font-bold text-emerald-400">100% Preparados</span>
+              </div>
+
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-gears text-sky-400 text-lg"></i>
+                  <span class="text-xs sm:text-sm text-slate-200 font-medium">Estandarización de Procesos</span>
+                </div>
+                <span class="text-xs font-bold text-sky-400">Ahorro de Tiempo</span>
+              </div>
+
+              <div class="bg-slate-900/60 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <i class="fa-solid fa-mobile-screen-button text-purple-400 text-lg"></i>
+                  <span class="text-xs sm:text-sm text-slate-200 font-medium">Control Digital en Tiempo Real</span>
+                </div>
+                <span class="text-xs font-bold text-purple-400">Cero Papel</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-700/80 text-center">
+              <p class="text-xs text-slate-400 mb-2">¿Necesitas una evaluación inicial?</p>
+              <a href="#contacto" class="text-xs font-semibold text-sky-400 hover:text-sky-300 inline-flex items-center gap-1">
+                <span>Solicita un diagnóstico gratuito</span>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- NOSOTROS OVERVIEW SECTION                  -->
+    <!-- ========================================== -->
+    <section id="nosotros" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider">
+              Sobre BMC Consultoría Integral
+            </div>
+            <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-navy leading-tight">
+              Socio estratégico en cumplimiento, gestión y modernización corporativa
+            </h2>
+            <p class="text-slate-600 text-base leading-relaxed">
+              En <strong>BMC Consultoría Integral</strong> nos especializamos en acompañar a las PyMEs peruanas en el fortalecimiento de sus áreas clave. Transformamos exigencias normativas y operativas complejas en sistemas prácticos, seguros e inteligentes que impulsan la sostenibilidad y competitividad de tu negocio.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="font-heading font-bold text-2xl text-brand-navy mb-1">+100%</div>
+                <div class="text-xs text-slate-500 font-medium">Conformidad Legal y Normativa</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                <div class="font-heading font-bold text-2xl text-emerald-700 mb-1">0</div>
+                <div class="text-xs text-slate-500 font-medium">Multas y Sanciones Previstas</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 grid sm:grid-cols-2 gap-4">
+            <div class="p-6 rounded-2xl bg-slate-900 text-white space-y-3">
+              <div class="w-10 h-10 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Misión</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Brindar soluciones integrales en SST, procesos y digitalización, adaptadas a la realidad operativa de cada cliente.
+              </p>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-brand-navy text-white space-y-3 sm:mt-6">
+              <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-white">Visión</h3>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Ser la consultora referente en el mercado nacional reconocida por la excelencia, practicidad y valor añadido en cada proyecto.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. SERVICE CARDS & TABS SECTION            -->
+    <!-- ========================================== -->
+    <section id="servicios" class="py-20 bg-brand-bgLight">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Title Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span class="text-brand-accent text-xs sm:text-sm font-bold uppercase tracking-widest bg-sky-100/70 px-3 py-1 rounded-full">Nuestras Soluciones</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy">
+            Servicios diseñados para proteger y escalar tu empresa
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Haz clic en los diferentes módulos para explorar nuestra gama completa de servicios especializados.
+          </p>
+        </div>
+
+        <!-- Interactive Service Navigation Tabs -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+          <button onclick="switchTab('sst')" id="tab-sst" class="service-tab-btn active p-4 rounded-2xl border border-slate-200 bg-white font-heading font-bold text-xs sm:text-sm text-slate-700 hover:border-brand-navy transition-all flex flex-col items-center justify-center gap-2 text-center">
+            <i class="fa-solid fa-hard-hat text-2xl text-amber-500"></i>
+            <span>Seguridad y Salud en el Trabajo</span>
+          </button>
+
+          <button onclick="switchTab('procesos')" id="tab-procesos" class="service-tab-btn p-4 rounded-2xl border border-slate-200 bg-white font-heading font-bold text-xs sm:text-sm text-slate-700 hover:border-brand-navy transition-all flex flex-col items-center justify-center gap-2 text-center">
+            <i class="fa-solid fa-diagram-project text-2xl text-sky-600"></i>
+            <span>Mejora de Procesos</span>
+          </button>
+
+          <button onclick="switchTab('digital')" id="tab-digital" class="service-tab-btn p-4 rounded-2xl border border-slate-200 bg-white font-heading font-bold text-xs sm:text-sm text-slate-700 hover:border-brand-navy transition-all flex flex-col items-center justify-center gap-2 text-center">
+            <i class="fa-solid fa-laptop-code text-2xl text-purple-600"></i>
+            <span>Digitalización de Negocios</span>
+          </button>
+
+          <button onclick="switchTab('ambiental')" id="tab-ambiental" class="service-tab-btn p-4 rounded-2xl border border-slate-200 bg-white font-heading font-bold text-xs sm:text-sm text-slate-700 hover:border-brand-navy transition-all flex flex-col items-center justify-center gap-2 text-center">
+            <i class="fa-solid fa-leaf text-2xl text-emerald-600"></i>
+            <span>Gestión Medioambiental</span>
+          </button>
+        </div>
+
+        <!-- ==================== TAB CONTENT 1: SST ==================== -->
+        <div id="content-sst" class="service-content-panel bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-xl transition-all">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-800 text-xs font-bold uppercase">
+                <i class="fa-solid fa-shield text-amber-600"></i> Normativa Ley N° 29783
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy">
+                Seguridad y Salud en el Trabajo (SST)
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                Protege a tu empresa de multas, accidentes y observaciones legales mientras fortaleces tu competitividad comercial para contratar con clientes corporativos.
+              </p>
+
+              <div>
+                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-3 flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-brand-accent"></i>
+                  Servicios y Entregables Clave:
+                </h4>
+                <ul class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Diagnóstico e implementación del SGSST.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Elaboración de Matrices IPERC detalladas.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Conformación de Comités / Supervisores.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Acompañamiento en Homologaciones y Auditorías.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Planes de Contingencia e Inspecciones.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Asesoría en Trámites Municipales e ITSE.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Benefits Box -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white rounded-2xl p-6 sm:p-8 space-y-4">
+              <h4 class="font-heading font-bold text-lg text-amber-400 flex items-center gap-2">
+                <i class="fa-solid fa-trophy"></i> Beneficios Principales
+              </h4>
+              <div class="space-y-3 text-xs sm:text-sm">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Cumplimiento 100% Ley 29783</strong>
+                    <span class="text-slate-300">Evita fiscalizaciones sorpresivas con documentación en regla.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Prevención de Multas SUNAFIL</strong>
+                    <span class="text-slate-300">Resguardo económico e institucional ante cualquier inspección.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Homologación Aprobada</strong>
+                    <span class="text-slate-300">Accede a contratos con grandes clientes e industrias.</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#contacto" onclick="selectServiceInForm('Seguridad y Salud en el Trabajo (SST)')" class="mt-4 w-full bg-amber-500 hover:bg-amber-600 text-slate-9 font-bold py-3 px-4 rounded-xl text-xs sm:text-sm text-center block transition-all">
+                Cotizar Servicio de SST
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB CONTENT 2: PROCESOS ==================== -->
+        <div id="content-procesos" class="service-content-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-xl transition-all">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-sky-50 text-sky-800 text-xs font-bold uppercase">
+                <i class="fa-solid fa-sliders text-sky-600"></i> Calidad &amp; ISO 9001
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy">
+                Mejora de Procesos Empresariales
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                Optimizamos tus operaciones con procedimientos estandarizados, indicadores de gestión (KPIs) y cultura de mejora continua para escalar sin desorden.
+              </p>
+
+              <div>
+                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-3 flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-brand-accent"></i>
+                  Servicios y Entregables Clave:
+                </h4>
+                <ul class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Levantamiento y rediseño de procesos.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Mapas de procesos e IPERC operativo.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Manuales, MOF, fichas y procedimientos.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Implementación de Tableros KPI.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Preparación y Asesoría ISO 9001.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Auditorías internas de calidad.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Benefits Box -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white rounded-2xl p-6 sm:p-8 space-y-4">
+              <h4 class="font-heading font-bold text-lg text-sky-400 flex items-center gap-2">
+                <i class="fa-solid fa-trophy"></i> Beneficios Principales
+              </h4>
+              <div class="space-y-3 text-xs sm:text-sm">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Ahorro de Tiempo y Costos</strong>
+                    <span class="text-slate-300">Elimina reprocesos, duplicidades y desorden interno.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Trazabilidad y Registros</strong>
+                    <span class="text-slate-300">Información confiable para la toma de decisiones.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Alineación a ISO 9001</strong>
+                    <span class="text-slate-300">Construye una organización sólida y certificable.</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#contacto" onclick="selectServiceInForm('Mejora de Procesos Empresariales')" class="mt-4 w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm text-center block transition-all">
+                Cotizar Mejora de Procesos
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB CONTENT 3: DIGITALIZACIÓN ==================== -->
+        <div id="content-digital" class="service-content-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-xl transition-all">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-50 text-purple-800 text-xs font-bold uppercase">
+                <i class="fa-solid fa-mobile-screen text-purple-600"></i> Tecnología Ágil
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy">
+                Digitalización de Negocios
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                Transforma procesos manuales en papel a aplicaciones web/móviles simples, automatizadas e inteligentes accesibles desde cualquier lugar.
+              </p>
+
+              <div>
+                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-3 flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-brand-accent"></i>
+                  Servicios y Entregables Clave:
+                </h4>
+                <ul class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Soluciones en Google Workspace y AppSheet.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Digitalización de asistencia e inventarios.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Formularios inteligentes para inspecciones.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Dashboards e informes automáticos.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Automatización con Excel Avanzado y Macros.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Capacitación a colaboradores.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Benefits Box -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white rounded-2xl p-6 sm:p-8 space-y-4">
+              <h4 class="font-heading font-bold text-lg text-purple-400 flex items-center gap-2">
+                <i class="fa-solid fa-trophy"></i> Beneficios Principales
+              </h4>
+              <div class="space-y-3 text-xs sm:text-sm">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Cero Papel y Reducción de Errores</strong>
+                    <span class="text-slate-300">Ahorra costos y elimina pérdidas de información física.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Control Remoto en Tiempo Real</strong>
+                    <span class="text-slate-300">Monitorea tus operaciones desde tu celular o laptop.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Sin Licencias Costosas</strong>
+                    <span class="text-slate-300">Desarrollos a medida sin pagos excesivos recurrentes.</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#contacto" onclick="selectServiceInForm('Digitalización de Negocios')" class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm text-center block transition-all">
+                Cotizar Digitalización
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== TAB CONTENT 4: AMBIENTAL ==================== -->
+        <div id="content-ambiental" class="service-content-panel hidden bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-xl transition-all">
+          <div class="grid lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-800 text-xs font-bold uppercase">
+                <i class="fa-solid fa-seedling text-emerald-600"></i> Sostenibilidad OEFA / MINAM
+              </div>
+              <h3 class="font-heading font-extrabold text-2xl sm:text-3xl text-brand-navy">
+                Gestión Medioambiental
+              </h3>
+              <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                Asegura el cumplimiento ambiental de tu negocio, evita sanciones pecuniarias y demuestra tu responsabilidad ecológica institucional.
+              </p>
+
+              <div>
+                <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base mb-3 flex items-center gap-2">
+                  <i class="fa-solid fa-list-check text-brand-accent"></i>
+                  Servicios y Entregables Clave:
+                </h4>
+                <ul class="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Diagnóstico de cumplimiento ambiental.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Planes de Manejo de Residuos Sólidos (PMR).</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Declaraciones Anuales y Registros SIAR / MINAM.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Capacitación en gestión ecológica a personal.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Asesoría directa en fiscalizaciones OEFA / DIGESA.</span>
+                  </li>
+                  <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                    <i class="fa-solid fa-check text-brand-green mt-1"></i>
+                    <span>Monitoreo y trámites sectoriales.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Benefits Box -->
+            <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white rounded-2xl p-6 sm:p-8 space-y-4">
+              <h4 class="font-heading font-bold text-lg text-emerald-400 flex items-center gap-2">
+                <i class="fa-solid fa-trophy"></i> Beneficios Principales
+              </h4>
+              <div class="space-y-3 text-xs sm:text-sm">
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Tranquilidad Legal Ante Organismos</strong>
+                    <span class="text-slate-300">Evita clausuras y multas de OEFA, MINAM o Municipios.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Operación Formal y Licencias</strong>
+                    <span class="text-slate-300">Mantiene habilitados los permisos operativos de tu sede.</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fa-solid fa-check text-xs"></i>
+                  </div>
+                  <div>
+                    <strong class="text-white block">Reputación de Marca Sostenible</strong>
+                    <span class="text-slate-300">Genera confianza entre clientes y la comunidad.</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#contacto" onclick="selectServiceInForm('Gestión Medioambiental')" class="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm text-center block transition-all">
+                Cotizar Gestión Ambiental
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. POR QUÉ ELEGIRNOS (DIFERENCIADORES)     -->
+    <!-- ========================================== -->
+    <section id="diferenciadores" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <span class="text-brand-green text-xs sm:text-sm font-bold uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">Nuestros Pilares</span>
+          <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-navy">
+            ¿Por qué las empresas eligen trabajar con BMC?
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            No entregamos simples carpetas de documentos; construimos soluciones vivas que funcionan en la rutina diaria de tu equipo.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-brand-navy text-sky-400 flex items-center justify-center text-2xl shadow-md">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-brand-navy">Soluciones Reales</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Diseños totalmente a medida para tu empresa. Nada de plantillas genéricas. Entregamos herramientas que generan valor tangible desde el primer día de implementación.
+            </p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-brand-navy text-emerald-400 flex items-center justify-center text-2xl shadow-md">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-brand-navy">Acompañamiento Cercano</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Estarás respaldado en cada etapa. Te guiamos durante auditorías, inspecciones sanitarias o fiscalizaciones presenciales, brindando tranquilidad técnica permanente.
+            </p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-4">
+            <div class="w-14 h-14 rounded-2xl bg-brand-navy text-purple-400 flex items-center justify-center text-2xl shadow-md">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-brand-navy">Capacitación Práctica</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Formamos y motivamos a tu personal basándonos en la realidad de sus puestos de trabajo cotidianos, asegurando la adopción voluntaria de los nuevos estándares.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. CLIENTES & CONFIANZA                    -->
+    <!-- ========================================== -->
+    <section id="clientes" class="py-16 bg-slate-900 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+          <p class="text-sky-400 font-bold text-xs uppercase tracking-widest">Confianza Garantizada</p>
+          <h2 class="font-heading font-extrabold text-2xl sm:text-3xl">Empresas que respaldan nuestro trabajo</h2>
+        </div>
+
+        <!-- Client Logo Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 items-center">
+          
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-building text-sky-400"></i>
+            <span>INSAR S.A.C.</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-industry text-sky-400"></i>
+            <span>Industrias Sarmiento</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-helmet-safety text-sky-400"></i>
+            <span>CS&amp;R</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-screwdriver-wrench text-sky-400"></i>
+            <span>FAREMAIM S.A.C.</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-city text-sky-400"></i>
+            <span>Logan Building</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-store text-sky-400"></i>
+            <span>Maki</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-utensils text-sky-400"></i>
+            <span>Shushupe Bar</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-hand-sparkles text-sky-400"></i>
+            <span>+Cleaning</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-briefcase text-sky-400"></i>
+            <span>AZVG</span>
+          </div>
+
+          <div class="bg-slate-800/60 border border-slate-700/50 rounded-xl p-4 text-center font-heading font-extrabold text-sm text-slate-300 hover:text-white hover:border-sky-400 transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-plus text-sky-400"></i>
+            <span>Más de 50 PyMEs</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 6. CONTACT & DYNAMIC ESTIMATOR FORM        -->
+    <!-- ========================================== -->
+    <section id="contacto" class="py-20 bg-brand-bgLight">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid lg:grid-cols-12 gap-12">
+          
+          <!-- Contact Info & Quick Reach -->
+          <div class="lg:col-span-5 space-y-8">
+            <div class="space-y-3">
+              <span class="text-brand-accent text-xs font-bold uppercase tracking-widest bg-sky-100 px-3 py-1 rounded-full">Contacto Directo</span>
+              <h2 class="font-heading font-extrabold text-3xl text-brand-navy">¡Hablemos de tu proyecto hoy mismo!</h2>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Agenda una consulta o solicita la cotización de tu servicio. Respondemos inmediatamente.
+              </p>
+            </div>
+
+            <!-- Contact Badges -->
+            <div class="space-y-4">
+              
+              <a href="mailto:consultoriaintegral.bmc@gmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                <div class="w-12 h-12 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 font-medium block">Correo Electrónico</span>
+                  <strong class="text-sm text-brand-navy">consultoriaintegral.bmc@gmail.com</strong>
+                </div>
+              </a>
+
+              <a href="https://wa.me/51940253588" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md transition-all">
+                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 font-medium block">Teléfono / WhatsApp</span>
+                  <strong class="text-sm text-brand-navy">+51 940 253 588</strong>
+                </div>
+              </a>
+
+              <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-200/80 shadow-sm">
+                <div class="w-12 h-12 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl shrink-0">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 font-medium block">Ubicación</span>
+                  <strong class="text-sm text-brand-navy">Lima, Perú (Atención Nacional)</strong>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- WhatsApp Quick Box -->
+            <div class="p-6 rounded-2xl bg-emerald-700 text-white space-y-3">
+              <h4 class="font-heading font-bold text-lg flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>¿Prefieres atención inmediata por WhatsApp?</span>
+              </h4>
+              <p class="text-xs text-emerald-100 leading-relaxed">
+                Haz clic abajo para iniciar un chat directo con nuestro consultor principal en un solo clic.
+              </p>
+              <a href="https://wa.me/51940253588?text=Hola,%20deseo%20una%20reuni%C3%B3n%20de%20diagn%C3%B3stico%20para%20mi%20empresa." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-white text-emerald-800 font-bold py-3 rounded-xl text-xs sm:text-sm hover:bg-emerald-50 transition-colors">
+                Iniciar Chat en WhatsApp
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Interactive Form & Quote Builder -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-xl">
+            
+            <h3 class="font-heading font-bold text-xl text-brand-navy mb-2">Solicitar Cotización o Información</h3>
+            <p class="text-xs text-slate-500 mb-6">Completa tus datos y te enviaremos una propuesta adaptada a tu empresa.</p>
+
+            <form id="quoteForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre Completo *</label>
+                  <input type="text" id="formName" required placeholder="Ej. Juan Pérez" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Nombre de la Empresa / RUC</label>
+                  <input type="text" id="formCompany" placeholder="Ej. MiEmpresa S.A.C." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none">
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Teléfono / WhatsApp *</label>
+                  <input type="tel" id="formPhone" required placeholder="Ej. 940253588" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-slate-700 mb-1">Servicio de Interés Principal *</label>
+                  <select id="formService" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none bg-white">
+                    <option value="">-- Seleccionar Servicio --</option>
+                    <option value="Seguridad y Salud en el Trabajo (SST)">Seguridad y Salud en el Trabajo (SST)</option>
+                    <option value="Mejora de Procesos Empresariales">Mejora de Procesos Empresariales</option>
+                    <option value="Digitalización de Negocios">Digitalización de Negocios</option>
+                    <option value="Gestión Medioambiental">Gestión Medioambiental</option>
+                    <option value="Servicio Integral Combinado">Servicio Integral Combinado</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 mb-1">Detalles de tu consulta o requerimiento</label>
+                <textarea id="formMessage" rows="4" placeholder="Indícanos cuántos trabajadores tienen o qué requerimiento específico necesitas resolver..." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-brand-accent focus:border-brand-accent outline-none"></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <button type="submit" class="flex-1 bg-brand-navy hover:bg-brand-slate text-white font-bold py-3.5 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                  <i class="fa-regular fa-paper-plane"></i>
+                  <span>Enviar por Correo</span>
+                </button>
+
+                <button type="button" onclick="sendViaWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                  <span>Enviar por WhatsApp</span>
+                </button>
+              </div>
+
+              <!-- Message confirmation box -->
+              <div id="formSuccessMsg" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-medium">
+                <i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>
+                ¡Gracias por comunicarte! Nos pondremos en contacto contigo a la brevedad.
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- 7. PROFESSIONAL FOOTER                     -->
+  <!-- ========================================== -->
+  <footer class="bg-slate-950 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-white">
+              <i class="fa-solid fa-shield-halved text-lg text-sky-400"></i>
+            </div>
+            <span class="font-heading font-black text-lg text-white">BMC Consultoría</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Especialistas en Seguridad y Salud en el Trabajo, Mapeo de Procesos, Herramientas Digitales y Gestión Ambiental para empresas en el Perú.
+          </p>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+            <li><a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Catálogo de Servicios</a></li>
+            <li><a href="#diferenciadores" class="hover:text-white transition-colors">Por Qué Elegirnos</a></li>
+            <li><a href="#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="space-y-3">
+          <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Nuestros Servicios</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#servicios" onclick="switchTab('sst')" class="hover:text-white transition-colors">Seguridad y Salud en el Trabajo</a></li>
+            <li><a href="#servicios" onclick="switchTab('procesos')" class="hover:text-white transition-colors">Mejora de Procesos Empresariales</a></li>
+            <li><a href="#servicios" onclick="switchTab('digital')" class="hover:text-white transition-colors">Digitalización con AppSheet &amp; Excel</a></li>
+            <li><a href="#servicios" onclick="switchTab('ambiental')" class="hover:text-white transition-colors">Gestión Medioambiental OEFA/MINAM</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Social & Contact -->
+        <div class="space-y-4">
+          <h4 class="font-heading font-bold text-sm text-white uppercase tracking-wider">Síguenos</h4>
+          <div class="flex items-center gap-3">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-sky-400 flex items-center justify-center transition-all">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-sky-400 flex items-center justify-center transition-all">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-sky-400 flex items-center justify-center transition-all">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="text-xs text-slate-400">
+            Atención: Lunes a Sábado <br>
+            Lima, Perú
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>&copy; 2026 BMC Consultoría Integral. Todos los derechos reservados.</p>
+        <p>Impulsando empresas más seguras, ordenadas e inteligentes.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- FLOATING WHATSAPP BUTTON                   -->
+  <!-- ========================================== -->
+  <a href="https://wa.me/51940253588?text=Hola%20BMC%20Consultor%C3%ADa,%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition-all duration-300 group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-16 bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none">
+      ¡Escríbenos por WhatsApp!
+    </span>
+  </a>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT LOGIC                           -->
+  <!-- ========================================== -->
+  <script>
+    // 1. Mobile Drawer Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const menuIcon = document.getElementById('menuIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+      if (mobileDrawer.classList.contains('hidden')) {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      } else {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      }
+    });
+
+    // Close mobile drawer on link click
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.add('hidden');
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      });
+    });
+
+    // 2. Interactive Service Tab Switcher
+    function switchTab(tabId) {
+      // Hide all content panels
+      document.querySelectorAll('.service-content-panel').forEach(panel => {
+        panel.classList.add('hidden');
+      });
+
+      // Deactivate all tab buttons
+      document.querySelectorAll('.service-tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Show selected panel & activate button
+      const targetPanel = document.getElementById('content-' + tabId);
+      const targetBtn = document.getElementById('tab-' + tabId);
+
+      if (targetPanel && targetBtn) {
+        targetPanel.classList.remove('hidden');
+        targetBtn.classList.add('active');
+      }
+    }
+
+    // 3. Pre-select service in form when clicking quote button inside tabs
+    function selectServiceInForm(serviceName) {
+      const selectElem = document.getElementById('formService');
+      if (selectElem) {
+        selectElem.value = serviceName;
+      }
+    }
+
+    // 4. Form Submit Handler (Simulated Email Send)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const successMsg = document.getElementById('formSuccessMsg');
+      if (successMsg) {
+        successMsg.classList.remove('hidden');
+        document.getElementById('quoteForm').reset();
+        setTimeout(() => {
+          successMsg.classList.add('hidden');
+        }, 6000);
+      }
+    }
+
+    // 5. Direct WhatsApp Message Generator
+    function sendViaWhatsApp() {
+      const name = document.getElementById('formName').value.trim();
+      const company = document.getElementById('formCompany').value.trim();
+      const phone = document.getElementById('formPhone').value.trim();
+      const service = document.getElementById('formService').value;
+      const message = document.getElementById('formMessage').value.trim();
+
+      if (!name || !phone) {
+        alert('Por favor completa al menos tu nombre y número telefónico.');
+        return;
+      }
+
+      let text = `Hola BMC Consultoría Integral, mi nombre es *${name}*`;
+      if (company) text += ` de la empresa *${company}*`;
+      text += `.\nMi teléfono de contacto es: ${phone}`;
+      if (service) text += `\nServicio de interés: *${service}*`;
+      if (message) text += `\nDetalles: ${message}`;
+
+      const encodedText = encodeURIComponent(text);
+      window.open(`https://wa.me/51940253588?text=${encodedText}`, '_blank');
+    }
+  </script>
+</body>
+</html>
