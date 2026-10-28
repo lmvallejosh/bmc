@@ -937,64 +937,6 @@
                 <button type="submit" class="flex-1 bg-brand-navy hover:bg-brand-slate text-white font-bold py-3.5 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
                   <i class="fa-regular fa-paper-plane"></i>
                   <span>Enviar por correo</span>
-                  <div class="contact-form-container" style="background: #f9f9f9; padding: 30px; border-radius: 8px; max-width: 600px; margin: 0 auto; font-family: sans-serif;">
-    <h3 style="color: #0f172a; margin-bottom: 10px;">Solicitar cotización o información</h3>
-    <p style="color: #475569; font-size: 14px; margin-bottom: 20px;">Complete sus datos y le enviaremos una propuesta adaptada a su empresa.</p>
-
-    <!-- 
-      CAMBIA "tu-correo@gmail.com" por tu correo real de la empresa: 
-      consultoriaintegral.bmc@gmail.com
-    -->
-    <form action="https://formsubmit.co/consultoriaintegral.bmc@gmail.com" method="POST">
-        
-        <!-- Configuración extra para mejorar la experiencia -->
-        <input type="hidden" name="_subject" value="¡Nueva cotización desde la web de BMC!">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.consultorabmc.com/?enviado=true">
-
-        <!-- Campo: Nombre -->
-        <div style="margin-bottom: 15px;">
-            <label style="display: block; font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #1e293b;">Nombre completo *</label>
-            <input type="text" name="Nombre" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box;">
-        </div>
-
-        <!-- Campo: Empresa -->
-        <div style="margin-bottom: 15px;">
-            <label style="display: block; font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #1e293b;">Nombre de la empresa</label>
-            <input type="text" name="Empresa" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box;">
-        </div>
-
-        <!-- Campo: Teléfono / WhatsApp -->
-        <div style="margin-bottom: 15px;">
-            <label style="display: block; font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #1e293b;">Teléfono / WhatsApp *</label>
-            <input type="tel" name="Telefono" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box;">
-        </div>
-
-        <!-- Campo: Servicio de interés -->
-        <div style="margin-bottom: 15px;">
-            <label style="display: block; font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #1e293b;">Servicio de interés principal *</label>
-            <select name="Servicio" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; box-sizing: border-box;">
-                <option value="Seguridad y Salud (SST)">Seguridad y Salud en el Trabajo (SST)</option>
-                <option value="Calidad ISO 9001">Calidad y Mejora de Procesos (ISO 9001)</option>
-                <option value="Gestion Ambiental">Gestión Medioambiental</option>
-                <option value="Transformacion Digital">Transformación Digital</option>
-                <option value="Otro">Otro requerimiento integral</option>
-            </select>
-        </div>
-
-        <!-- Campo: Mensaje -->
-        <div style="margin-bottom: 20px;">
-            <label style="display: block; font-weight: bold; font-size: 13px; margin-bottom: 5px; color: #1e293b;">Detalles de su consulta o requerimiento</label>
-            <textarea name="Mensaje" rows="4" style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-sizing: border-box;"></textarea>
-        </div>
-
-        <!-- Botón de Envío -->
-        <button type="submit" style="width: 100%; background: #0284c7; color: white; border: none; padding: 12px; font-size: 15px; font-weight: bold; border-radius: 4px; cursor: pointer;">
-            Enviar solicitud por correo
-        </button>
-
-    </form>
-</div>
                 </button>
 
                 <button type="button" onclick="sendViaWhatsApp()" class="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl text-sm shadow-md transition-all flex items-center justify-center gap-2">
