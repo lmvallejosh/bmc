@@ -1170,5 +1170,19 @@
       window.open(`https://wa.me/51940253588?text=${encodedText}`, '_blank');
     }
   </script>
+  <script>
+  // Detecta si la URL tiene "?enviado=true" para mostrar el mensaje de éxito automáticamente
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('enviado') === 'true') {
+      const successMsg = document.getElementById('formSuccessMsg');
+      if (successMsg) {
+        successMsg.classList.remove('hidden');
+        // Opcional: baja la pantalla automáticamente hasta el mensaje de éxito
+        successMsg.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+</script>
 </body>
 </html>
